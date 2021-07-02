@@ -3,6 +3,7 @@
 set -xe
 
 lua53=$(which lua5.3 || which true)
+lua52=$(which lua5.2 || which true)
 lua51=$(which lua5.1 || which true)
 luajit=$(which luajit || which true)
 
@@ -15,6 +16,7 @@ for test in \
   test/test_pm.lua
 do
   $lua53 $test
+  $lua52 $test
   $lua51 $test
   $luajit $test
 done
